@@ -1,0 +1,10 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es6",
+        "removeComments": true,
+        "outFile": "app.js",
+        "sourceMap": true,
+        "module": "amd"
+    }
+}
