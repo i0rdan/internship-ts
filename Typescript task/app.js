@@ -33,26 +33,28 @@ class Typography {
         }
     }
     createProduct(name, author, typeOfProduct) {
-        if (typeOfProduct === 'book') {
-            let newBook = new CreatorOfBook(this.label, this.director, this.store)
-                .createProduct(name, author, 'book');
-            setTimeout(() => {
-                this.store.push(newBook);
-            }, this.timeForCreateBook);
-        }
-        else if (typeOfProduct === 'postcard') {
-            let newPostcard = new CreatorOfPostcard(this.label, this.director, this.store)
-                .createProduct(name, author, 'postcard');
-            setTimeout(() => {
-                this.store.push(newPostcard);
-            }, this.timeForCreatePostCard);
-        }
-        else {
-            let newBuisnessCard = new CreatorOfBuisnessCard(this.label, this.director, this.store)
-                .createProduct(name, author, 'buisness card');
-            setTimeout(() => {
-                this.store.push(newBuisnessCard);
-            }, this.timeForCreateBuisnessCard);
+        switch (typeOfProduct) {
+            case 'book':
+                let newBook = new CreatorOfBook(this.label, this.director, this.store)
+                    .createProduct(name, author, 'book');
+                setTimeout(() => {
+                    this.store.push(newBook);
+                }, this.timeForCreateBook);
+                break;
+            case 'postcard':
+                let newPostcard = new CreatorOfPostcard(this.label, this.director, this.store)
+                    .createProduct(name, author, 'postcard');
+                setTimeout(() => {
+                    this.store.push(newPostcard);
+                }, this.timeForCreatePostCard);
+                break;
+            case 'buisness card':
+                let newBuisnessCard = new CreatorOfBuisnessCard(this.label, this.director, this.store)
+                    .createProduct(name, author, 'buisness card');
+                setTimeout(() => {
+                    this.store.push(newBuisnessCard);
+                }, this.timeForCreateBuisnessCard);
+                break;
         }
     }
 }
